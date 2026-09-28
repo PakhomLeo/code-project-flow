@@ -1,3 +1,7 @@
 # Shell scripts must stay LF: a CRLF working copy breaks `bash install.sh`
 # for anyone cloning with core.autocrlf=true.
 *.sh text eol=lf
+
+# SKILL.md frontmatter and the reference templates are parsed by the agent,
+# and a CRLF checkout leaves \r inside the YAML values. Pin markdown too.
+*.md text eol=lf
