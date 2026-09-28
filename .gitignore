@@ -1,0 +1,13 @@
+# Qoder / agent session state
+.qoder/
+.qoder-cn/
+
+# Harness implementations live in the consuming project, not in this skill.
+harness/
+docs/
+
+# OS and editor noise
+.DS_Store
+Thumbs.db
+*.swp
+*~
