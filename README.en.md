@@ -34,7 +34,7 @@ Code detail stays out of the documents. Documents hold decisions only. Each owns
 | Doc 1 | `AGENTS.md` | **You, exclusively** | Agent rules, the four overriding principles, document division of labour |
 | Doc 2 | `docs/MAP.md` | Agent proposes, you approve | Design: feature choices, project structure, user flow, data flow |
 | Doc 3 | `docs/HARNESS.md` | Agent proposes, you approve | Registered regression loops (harnesses) |
-| Doc 4 | `docs/TASK.md` | Agent writes, deleted at close-out | The construction plan for *this round only*, down to functions and file paths |
+| Doc 4 | `docs/TASK.md` | Agent writes, deleted at close-out | The construction plan for *this round only*, down to functions and file paths, written in simplified technical language (ASD-STE100) |
 
 The division that matters:
 
@@ -42,6 +42,7 @@ The division that matters:
 - **Doc 2 only holds what you have actually decided.** Anything missing from its feature section is not part of this project.
 - **Doc 4 is disposable.** It is a one-round work order — not archived, not kept in history.
 - **A new session reads only Docs 1, 2 and 3.** It does not read the implementations under `harness/`, and does not read deleted task briefs. Context stays stable as a result.
+- **The agent's replies follow the same style.** Descriptions, questions and answers use short sentences and common words; function and field names are avoided — when one is unavoidable, it comes with a plain-language explanation first.
 
 Doc 2's eight sections, Doc 3's four sections and Doc 4's seven sections are fixed templates in [`references/`](references/). The agent fills them in when creating the documents.
 
@@ -56,7 +57,7 @@ READ  →  WRITE BRIEF  →  CONFIRM  →  BUILD  →  CLOSE OUT
 
 **1. Read** — Rules and design documents first. If the design doc does not exist, create it by reading the **actual current shape** out of the existing code, not the ideal shape. Leave the structure and the two flows blank and wait for your review before continuing.
 
-**2. Write the task brief** — `docs/TASK.md`, in language a non-programmer can follow, fixed at seven sections:
+**2. Write the task brief** — `docs/TASK.md`, in simplified technical language (ASD-STE100 style), fixed at seven sections:
 
 1. Why this round is happening
 2. How it will be done (functions and paths spelled out; **files not listed must not be touched**)
@@ -158,7 +159,7 @@ You:  Add tag filtering to the article list
 Agent: (reads AGENTS.md / docs/MAP.md / docs/HARNESS.md)
        docs/TASK.md is written, all seven sections. Highlights:
        - Why: tags are stored but there is no entry point; users can only page
-       - How: modify listArticles() to take a tag param; modify TagBar
+       - How: the article-list query takes a tag parameter; the tag bar shows the current selection
        - Touches: the pager must recompute offset when a tag is present
        - Not on the side: no tag renaming, unrelated to filtering
        - Conflict with design doc: none
